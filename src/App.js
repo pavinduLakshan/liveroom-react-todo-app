@@ -12,10 +12,6 @@ import ToDoItem from "./components/ToDoItem";
 import AddTaskForm from "./components/AddTaskForm";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    margin: 0
-  },
   title: {
     flexGrow: 1,
   },
@@ -72,12 +68,9 @@ function App() {
           </Toolbar>
         </AppBar>
 
-        {/* Menu buttons */}
-        <div className="menu_buttons">
-          <div style={{ flexGrow: 1 }}></div>
-
+        
           <AddTaskForm onSubmit={addToDo} />
-        </div>
+        
 
         {/* Main Container */}
         <Grid container spacing={5} className="main_container">
@@ -104,7 +97,7 @@ function App() {
             )) : <Typography variant="subtitle1" style={{padding: "2%",color: "grey"}}>No tasks yet</Typography>}
           </Grid>
           {/* Completed tasks */}
-          <Grid item xs={6} sm={12} md={6} lg={6}>
+          <Grid item xs={12} sm={12} md={6} lg={6}>
             <Typography
               variant="h5"
               component="h5"
@@ -120,7 +113,10 @@ function App() {
               onDelete={deleteToDo}
               isCompleted={item.completed}
               onReverse={markAsNotCompleted}
-            /> ) : <Typography variant="subtitle1" style={{padding: "2%",color: "grey"}}>No completed tasks yet</Typography>}
+            /> ) : 
+            
+<Typography variant="subtitle1" style={{padding: "2%",color: "grey"}}>No completed tasks yet</Typography>
+            }
           </Grid>
         </Grid>
       </div>
