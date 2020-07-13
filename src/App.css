@@ -13,15 +13,22 @@
 #add_todo_button{
   background-color: #29A202;
   color: white;
+  margin-right: 1%;
+  margin-top: 1%;
+  float: right;
+
+margin-left: auto;
+  
 }
 
 .main_container{
-  padding: 0.5%;
+  padding-left: 1.5%;
+  padding-right: 1.5%;
 }
 
 .add-todo-modal{
   position: absolute;
-  width: 50%;
+  width: 35%;
   height: 50%;
 background-color: white;
 outline: 0;
@@ -31,6 +38,22 @@ outline: 0;
   bottom: auto;
   padding: 3%;
   transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 600px) {
+  .add-todo-modal{
+    position: absolute;
+    width: 90%;
+    height: 50%;
+  background-color: white;
+  outline: 0;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    padding: 3%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 #todo-options{
