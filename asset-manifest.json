@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/liveroom-react-todo-app/static/css/main.e5982c47.chunk.css",
+    "main.js": "/liveroom-react-todo-app/static/js/main.9497e748.chunk.js",
+    "main.js.map": "/liveroom-react-todo-app/static/js/main.9497e748.chunk.js.map",
+    "runtime-main.js": "/liveroom-react-todo-app/static/js/runtime-main.44645848.js",
+    "runtime-main.js.map": "/liveroom-react-todo-app/static/js/runtime-main.44645848.js.map",
+    "static/js/2.44655a66.chunk.js": "/liveroom-react-todo-app/static/js/2.44655a66.chunk.js",
+    "static/js/2.44655a66.chunk.js.map": "/liveroom-react-todo-app/static/js/2.44655a66.chunk.js.map",
+    "index.html": "/liveroom-react-todo-app/index.html",
+    "precache-manifest.a2c2324498e3f6f79330d7cdd611498e.js": "/liveroom-react-todo-app/precache-manifest.a2c2324498e3f6f79330d7cdd611498e.js",
+    "service-worker.js": "/liveroom-react-todo-app/service-worker.js",
+    "static/css/main.e5982c47.chunk.css.map": "/liveroom-react-todo-app/static/css/main.e5982c47.chunk.css.map",
+    "static/js/2.44655a66.chunk.js.LICENSE.txt": "/liveroom-react-todo-app/static/js/2.44655a66.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.44645848.js",
+    "static/js/2.44655a66.chunk.js",
+    "static/css/main.e5982c47.chunk.css",
+    "static/js/main.9497e748.chunk.js"
+  ]
+}
