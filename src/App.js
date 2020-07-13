@@ -29,18 +29,18 @@ function App() {
   }
 
   function markAsCompleted(id){
-    let comItem = toDo.filter(t => t.id === id)
-    comItem[0].completed = true
-    setDone([...done,comItem[0]])
+    let comItem = toDo.find(t => t.id === id)
+    comItem.completed = true
+    setDone([...done,comItem])
     const newToDo = toDo.filter(t => t.id !== id)
     setToDo(newToDo)
   }
 
   function markAsNotCompleted(id){
-    let comItem = done.filter(t => t.id === id)
-    comItem[0].completed = false
+    let comItem = done.find(t => t.id === id)
+    comItem.completed = false
 
-    setToDo([...toDo,comItem[0]])
+    setToDo([...toDo,comItem])
     const newDone = done.filter(t => t.id !== id)
     setDone(newDone)
   }
