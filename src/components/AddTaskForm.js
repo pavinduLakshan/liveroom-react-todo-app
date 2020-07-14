@@ -61,7 +61,7 @@ const AddTaskForm = ({ onSubmit }) => {
         aria-describedby="simple-modal-description"
       >
         <div className="add-todo-modal">
-          <CloseIcon onClick={handleClose} style={{ float: 'right', marginBottom: '3%' }} />
+          <CloseIcon onClick={handleClose} style={{ cursor: "pointer",float: 'right', marginBottom: '3%' }} />
           <Typography variant="h6" style={{ marginBottom: '4%' }}>
             Add new Todo
           </Typography>
