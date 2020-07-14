@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b0ca4f7d087767d6d13244c2e9eca7c8",
+    "revision": "5a02230fac99a3b262a872a520112b82",
     "url": "/liveroom-react-todo-app/index.html"
   },
   {
-    "revision": "b2f7e98c5bf547c9a76d",
+    "revision": "17471d9d62f5c03e90bc",
     "url": "/liveroom-react-todo-app/static/css/main.6647ee7f.chunk.css"
   },
   {
-    "revision": "df8628c4aff3b8a48ec9",
-    "url": "/liveroom-react-todo-app/static/js/2.300d7f5f.chunk.js"
+    "revision": "dc7ef071b4198255f564",
+    "url": "/liveroom-react-todo-app/static/js/2.1d09dbfa.chunk.js"
   },
   {
     "revision": "0749163b59fbee32225059cb60c18af6",
-    "url": "/liveroom-react-todo-app/static/js/2.300d7f5f.chunk.js.LICENSE.txt"
+    "url": "/liveroom-react-todo-app/static/js/2.1d09dbfa.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b2f7e98c5bf547c9a76d",
-    "url": "/liveroom-react-todo-app/static/js/main.8e969b92.chunk.js"
+    "revision": "17471d9d62f5c03e90bc",
+    "url": "/liveroom-react-todo-app/static/js/main.ee86f6bc.chunk.js"
   },
   {
     "revision": "0c0a50ee70beedfacc3e",

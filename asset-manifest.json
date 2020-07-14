@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/liveroom-react-todo-app/static/css/main.6647ee7f.chunk.css",
-    "main.js": "/liveroom-react-todo-app/static/js/main.8e969b92.chunk.js",
-    "main.js.map": "/liveroom-react-todo-app/static/js/main.8e969b92.chunk.js.map",
+    "main.js": "/liveroom-react-todo-app/static/js/main.ee86f6bc.chunk.js",
+    "main.js.map": "/liveroom-react-todo-app/static/js/main.ee86f6bc.chunk.js.map",
     "runtime-main.js": "/liveroom-react-todo-app/static/js/runtime-main.44645848.js",
     "runtime-main.js.map": "/liveroom-react-todo-app/static/js/runtime-main.44645848.js.map",
-    "static/js/2.300d7f5f.chunk.js": "/liveroom-react-todo-app/static/js/2.300d7f5f.chunk.js",
-    "static/js/2.300d7f5f.chunk.js.map": "/liveroom-react-todo-app/static/js/2.300d7f5f.chunk.js.map",
+    "static/js/2.1d09dbfa.chunk.js": "/liveroom-react-todo-app/static/js/2.1d09dbfa.chunk.js",
+    "static/js/2.1d09dbfa.chunk.js.map": "/liveroom-react-todo-app/static/js/2.1d09dbfa.chunk.js.map",
     "index.html": "/liveroom-react-todo-app/index.html",
-    "precache-manifest.9c82c8a75acbcf8b48da862e65315916.js": "/liveroom-react-todo-app/precache-manifest.9c82c8a75acbcf8b48da862e65315916.js",
+    "precache-manifest.d8c2d5c662eab640d330315473f6b770.js": "/liveroom-react-todo-app/precache-manifest.d8c2d5c662eab640d330315473f6b770.js",
     "service-worker.js": "/liveroom-react-todo-app/service-worker.js",
     "static/css/main.6647ee7f.chunk.css.map": "/liveroom-react-todo-app/static/css/main.6647ee7f.chunk.css.map",
-    "static/js/2.300d7f5f.chunk.js.LICENSE.txt": "/liveroom-react-todo-app/static/js/2.300d7f5f.chunk.js.LICENSE.txt"
+    "static/js/2.1d09dbfa.chunk.js.LICENSE.txt": "/liveroom-react-todo-app/static/js/2.1d09dbfa.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.44645848.js",
-    "static/js/2.300d7f5f.chunk.js",
+    "static/js/2.1d09dbfa.chunk.js",
     "static/css/main.6647ee7f.chunk.css",
-    "static/js/main.8e969b92.chunk.js"
+    "static/js/main.ee86f6bc.chunk.js"
   ]
 }
