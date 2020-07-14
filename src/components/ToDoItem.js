@@ -12,6 +12,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+import Grow from '@material-ui/core/Grow';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -36,7 +37,8 @@ const ToDoItem = ({ id, name, date, time, isCompleted, onChangeStatus, onDelete 
   };
 
   return (
-    <Paper
+    <Grow in={true}>
+<Paper
       elevation={3}
       className={classes.paper}
       style={{
@@ -97,6 +99,7 @@ const ToDoItem = ({ id, name, date, time, isCompleted, onChangeStatus, onDelete 
         </Menu>
       </Paper>
     </Paper>
+    </Grow>
   );
 };
 
