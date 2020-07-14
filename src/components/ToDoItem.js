@@ -39,7 +39,7 @@ const ToDoItem = ({ id, name, date, time, timeout, isFirstRender, isCompleted, o
   return (
     <Grow
       in={true}
-      key={Math.random()}
+      key={name}
       unmountOnExit={true}
       style={{ transformOrigin: `0 0 0` }}
       {...{ timeout: timeout }}
