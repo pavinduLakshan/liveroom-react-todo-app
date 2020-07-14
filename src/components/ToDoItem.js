@@ -37,7 +37,7 @@ const ToDoItem = ({ id, name, date, time, timeout, isFirstRender, isCompleted, o
   };
 
   return (
-    <Grow in={true} style={{ transformOrigin: `0 0 0` }} {...{ timeout: isFirstRender ? timeout : 1000 }}>
+    <Grow in={true} unmountOnExit={true} style={{ transformOrigin: `0 0 0` }} {...{ timeout: isFirstRender ? timeout : 1000 }}>
       <Paper
         elevation={3}
         className={classes.paper}
