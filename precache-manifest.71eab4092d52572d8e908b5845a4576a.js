@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c67328162d86a00d91154c2d8fcb6a1e",
+    "revision": "7431ac148182f1c36a7a0fc86cedf50c",
     "url": "/liveroom-react-todo-app/index.html"
   },
   {
-    "revision": "a8b889d804a435fd8b7e",
+    "revision": "f349b804d307b4c7c80e",
     "url": "/liveroom-react-todo-app/static/css/main.09ea9b3e.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/liveroom-react-todo-app/static/js/2.2f3d9537.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a8b889d804a435fd8b7e",
-    "url": "/liveroom-react-todo-app/static/js/main.6c289b72.chunk.js"
+    "revision": "f349b804d307b4c7c80e",
+    "url": "/liveroom-react-todo-app/static/js/main.507e2bdd.chunk.js"
   },
   {
     "revision": "0c0a50ee70beedfacc3e",
