@@ -17,7 +17,7 @@ const themeLight = createMuiTheme({
 
 function App() {
   return (
-    <BrowserRouter basename="/liveroom-react-todo-app">
+    <BrowserRouter basename={process.env.REACT_APP_BASE_URL}>
       <MuiThemeProvider theme={themeLight}>
         <CssBaseline />
         <div className="App">
