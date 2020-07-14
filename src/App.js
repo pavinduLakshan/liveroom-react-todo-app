@@ -21,8 +21,8 @@ function App() {
       <MuiThemeProvider theme={themeLight}>
         <CssBaseline />
         <div className="App">
-          <Route exact path="/" component={Pagination} />
-          <Route exact path="/pagination" component={ToDoList} />
+          <Route exact path="/" component={ToDoList} />
+          <Route exact path="/pagination" component={Pagination} />
         </div>
       </MuiThemeProvider>
     </BrowserRouter>
