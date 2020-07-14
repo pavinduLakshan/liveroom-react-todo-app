@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.menu_buttons{
+.menu_buttons {
   display: flex;
   height: 8vh;
   align-items: center;
@@ -10,28 +10,26 @@
   margin: 0.5%;
 }
 
-#add_todo_button{
-  background-color: #29A202;
+#add_todo_button {
+  background-color: #29a202;
   color: white;
   margin-right: 1%;
   margin-top: 1%;
   float: right;
-
-margin-left: auto;
-  
+  margin-left: auto;
 }
 
-.main_container{
+.main_container {
   padding-left: 1.5%;
   padding-right: 1.5%;
 }
 
-.add-todo-modal{
+.add-todo-modal {
   position: absolute;
   width: 35%;
   height: 50%;
-background-color: white;
-outline: 0;
+  background-color: white;
+  outline: 0;
   top: 50%;
   left: 50%;
   right: auto;
@@ -41,12 +39,11 @@ outline: 0;
 }
 
 @media screen and (max-width: 600px) {
-  .add-todo-modal{
+  .add-todo-modal {
     position: absolute;
     width: 90%;
-    height: 50%;
-  background-color: white;
-  outline: 0;
+    background-color: white;
+    outline: 0;
     top: 50%;
     left: 50%;
     right: auto;
@@ -56,6 +53,6 @@ outline: 0;
   }
 }
 
-#todo-options{
+#todo-options {
   outline: 0;
 }
