@@ -20,30 +20,17 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'left',
     color: theme.palette.text.secondary,
     display: 'flex',
+    height: '15vh',
+    justifyContent: 'center',
     flexDirection: 'row',
   },
 }));
 
-const ToDoItem = ({ id, name, date, time, timeout, isFirstRender, isCompleted, onChangeStatus, onDelete }) => {
+const ToDoItem = ({ name, date, time, timeout, isFirstRender, isCompleted }) => {
   const classes = useStyles();
-  const [anchorEl, setAnchorEl] = useState(null);
-
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   return (
-    <Grow
-      in={true}
-      key={name}
-      unmountOnExit={true}
-      style={{ transformOrigin: `0 0 0` }}
-      {...{ timeout: timeout }}
-    >
+    <Grow in={true} key={name} unmountOnExit={true} style={{ transformOrigin: `0 0 0` }} {...{ timeout: timeout }}>
       <Paper
         elevation={3}
         className={classes.paper}
@@ -58,52 +45,12 @@ const ToDoItem = ({ id, name, date, time, timeout, isFirstRender, isCompleted, o
           <Typography variant="h6" className={classes.title}>
             {name}
           </Typography>
-          <Typography variant="subtitle1">
-            {date} | {time}
+          <Typography variant="subtitle1" className={classes.title}>
+            {date}
           </Typography>
         </div>
         <div style={{ flexGrow: 1 }}></div>
-        {/* Show corresponding icons based on completion status */}
-        {isCompleted ? (
-          <div>
-            <IconButton>
-              <UndoCompletedIcon style={{ color: 'red', fontSize: 30 }} onClick={() => onChangeStatus(id, false)} />
-            </IconButton>
-          </div>
-        ) : (
-          <IconButton>
-            <NotCompletedIcon style={{ fontSize: 30 }} onClick={() => onChangeStatus(id, true)} />
-          </IconButton>
-        )}
-        {/* Todo options menu */}
-
-        <IconButton
-          aria-controls="customized-menu"
-          aria-haspopup="true"
-          variant="contained"
-          color="primary"
-          onClick={handleClick}
-        >
-          <MoreVerticalIcon style={{ color: isCompleted ? 'white' : 'black', fontSize: 25 }} />
-        </IconButton>
-
-        <Paper className={classes.root}>
-          <Menu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
-            <MenuList id="todo-options">
-              <MenuItem
-                onClick={() => {
-                  onDelete(id);
-                  handleClose();
-                }}
-              >
-                <ListItemIcon>
-                  <DeleteIcon fontSize="small" />
-                </ListItemIcon>
-                <Typography variant="inherit">Delete</Typography>
-              </MenuItem>
-            </MenuList>
-          </Menu>
-        </Paper>
+        <img src={`https://avatars.dicebear.com/api/human/${name}.svg`} height="70" width="70" />
       </Paper>
     </Grow>
   );
