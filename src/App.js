@@ -22,7 +22,7 @@ function App() {
         <CssBaseline />
         <div className="App">
           <Route exact path="/" component={ToDoList} />
-          <Route exact path="/pagination" component={Pagination} />
+          <Route path="/pagination" component={Pagination} />
         </div>
       </MuiThemeProvider>
     </BrowserRouter>
