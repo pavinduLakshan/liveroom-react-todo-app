@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import Modal from '@material-ui/core/Modal';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
+import AddIcon from '@material-ui/icons/Add';
 import CloseIcon from '@material-ui/icons/Close';
+import Fab from '@material-ui/core/Fab';
 // date and time utils
 import 'date-fns';
 import { MuiPickersUtilsProvider, KeyboardTimePicker, KeyboardDatePicker } from '@material-ui/pickers';
@@ -50,9 +53,11 @@ const AddTaskForm = ({ onSubmit }) => {
 
   return (
     <div>
-      <Button id="add_todo_button" onClick={handleOpen}>
-        Add Todo
-      </Button>
+      <Fab id="add_todo_button" color="primary" aria-label="add">
+        <IconButton onClick={handleOpen}>
+          <AddIcon style={{ color: 'white', fontWeight: 'bold' }} />
+        </IconButton>
+      </Fab>
       <Modal
         open={isOpen}
         disableBackdropClick

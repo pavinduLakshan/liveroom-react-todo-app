@@ -11,12 +11,13 @@
 }
 
 #add_todo_button {
-  background-color: #29a202;
+  background-color: #35c706;
   color: white;
-  margin-right: 1%;
-  margin-top: 1%;
-  float: right;
-  margin-left: auto;
+  margin-right: 2%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 2%;
 }
 
 .main_container {
@@ -27,7 +28,7 @@
 .add-todo-modal {
   position: absolute;
   width: 35%;
-  height: 50%;
+  height: auto;
   background-color: white;
   outline: 0;
   top: 50%;
@@ -42,7 +43,7 @@
   .add-todo-modal {
     position: absolute;
     width: 80%;
-    min-height: 60%;
+    min-height: 45%;
     height: auto;
     background-color: white;
     outline: 0;
