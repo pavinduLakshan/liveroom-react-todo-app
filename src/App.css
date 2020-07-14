@@ -42,6 +42,8 @@
   .add-todo-modal {
     position: absolute;
     width: 80%;
+    min-height: 60%;
+    height: auto;
     background-color: white;
     outline: 0;
     top: 50%;
