@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/liveroom-react-todo-app/static/css/main.09ea9b3e.chunk.css",
-    "main.js": "/liveroom-react-todo-app/static/js/main.a1828d8f.chunk.js",
-    "main.js.map": "/liveroom-react-todo-app/static/js/main.a1828d8f.chunk.js.map",
+    "main.js": "/liveroom-react-todo-app/static/js/main.6c289b72.chunk.js",
+    "main.js.map": "/liveroom-react-todo-app/static/js/main.6c289b72.chunk.js.map",
     "runtime-main.js": "/liveroom-react-todo-app/static/js/runtime-main.44645848.js",
     "runtime-main.js.map": "/liveroom-react-todo-app/static/js/runtime-main.44645848.js.map",
     "static/js/2.2f3d9537.chunk.js": "/liveroom-react-todo-app/static/js/2.2f3d9537.chunk.js",
     "static/js/2.2f3d9537.chunk.js.map": "/liveroom-react-todo-app/static/js/2.2f3d9537.chunk.js.map",
     "index.html": "/liveroom-react-todo-app/index.html",
-    "precache-manifest.1d0d2926bef524faacd9f780d4682c01.js": "/liveroom-react-todo-app/precache-manifest.1d0d2926bef524faacd9f780d4682c01.js",
+    "precache-manifest.043a9954acf261e911ac45db153ca0e0.js": "/liveroom-react-todo-app/precache-manifest.043a9954acf261e911ac45db153ca0e0.js",
     "service-worker.js": "/liveroom-react-todo-app/service-worker.js",
     "static/css/main.09ea9b3e.chunk.css.map": "/liveroom-react-todo-app/static/css/main.09ea9b3e.chunk.css.map",
     "static/js/2.2f3d9537.chunk.js.LICENSE.txt": "/liveroom-react-todo-app/static/js/2.2f3d9537.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.44645848.js",
     "static/js/2.2f3d9537.chunk.js",
     "static/css/main.09ea9b3e.chunk.css",
-    "static/js/main.a1828d8f.chunk.js"
+    "static/js/main.6c289b72.chunk.js"
   ]
 }
