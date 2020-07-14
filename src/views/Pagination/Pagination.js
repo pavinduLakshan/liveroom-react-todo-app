@@ -41,8 +41,8 @@ const Pagination = () => {
       <Grid container spacing={0} className="main_container">
         <Grid item xs={12} sm={12} md={2} lg={2}></Grid>
         <Grid item xs={12} sm={12} md={8} lg={8} style={{ marginTop: '3%' }}>
-          {list.map((item) => {
-            return <ToDoItem id={Math.random()} name={item.PK} date={item.SK} />;
+          {list.map((item,index) => {
+            return <ToDoItem id={Math.random()} timeout={250 * (index + 1)} name={item.PK} date={item.SK} />;
           })}
           <div id="btn_container">
             <Button variant="contained" onClick={prev} color="primary">
