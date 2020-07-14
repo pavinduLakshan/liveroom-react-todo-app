@@ -42,7 +42,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className={classes.root}>
+      <div>
         {/* AppBar */}
         <AppBar position="static">
           <Toolbar>
@@ -53,48 +53,44 @@ function App() {
         </AppBar>
         <AddTaskForm onSubmit={addToDo} />
         {/* Main Container */}
-        <Grid container spacing={5} className="main_container">
+        <Grid container spacing={0} className="main_container">
           {/* To do work */}
-          <Grid item xs={12} sm={12} md={6} lg={6}>
+          <Grid item xs={12} sm={12} md={6} lg={6} style={{ minHeight: '20vh' }}>
             <Typography variant="h5" component="h5" style={{ textAlign: 'left' }}>
               To do
             </Typography>
-            {toDos.map((item) => {
-              if (!item.completed) {
-                return (
-                  <ToDoItem
-                    id={item.id}
-                    name={item.name}
-                    date={item.date}
-                    time={item.time}
-                    onChangeStatus={setCompletedStatus}
-                    onDelete={deleteToDo}
-                    isCompleted={item.completed}
-                  />
-                );
-              }
-            })}
+            {toDos
+              .filter((item) => !item.completed)
+              .map((item) => (
+                <ToDoItem
+                  id={item.id}
+                  name={item.name}
+                  date={item.date}
+                  time={item.time}
+                  onChangeStatus={setCompletedStatus}
+                  onDelete={deleteToDo}
+                  isCompleted={item.completed}
+                />
+              ))}
           </Grid>
           {/* Completed tasks */}
-          <Grid item xs={12} sm={12} md={6} lg={6}>
+          <Grid item xs={12} sm={12} md={6} lg={6} style={{ minHeight: '20vh' }}>
             <Typography variant="h5" component="h5" style={{ textAlign: 'left' }}>
               Done
             </Typography>
-            {toDos.map((item) => {
-              if (item.completed) {
-                return (
-                  <ToDoItem
-                    id={item.id}
-                    name={item.name}
-                    date={item.date}
-                    time={item.time}
-                    onChangeStatus={setCompletedStatus}
-                    onDelete={deleteToDo}
-                    isCompleted={item.completed}
-                  />
-                );
-              }
-            })}
+            {toDos
+              .filter((item) => item.completed)
+              .map((item) => (
+                <ToDoItem
+                  id={item.id}
+                  name={item.name}
+                  date={item.date}
+                  time={item.time}
+                  onChangeStatus={setCompletedStatus}
+                  onDelete={deleteToDo}
+                  isCompleted={item.completed}
+                />
+              ))}
           </Grid>
         </Grid>
       </div>
