@@ -121,7 +121,7 @@ function App() {
                   <ToDoItem
                     id={item.id}
                     isFirstRender={isFirstRender}
-                    timeout={1000 * (index + 1)}
+                    timeout={250 * (index + 1)}
                     name={item.name}
                     date={item.date}
                     time={item.time}
