@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/liveroom-react-todo-app/precache-manifest.d989ea90b18c277c1514ca81c3017864.js"
+  "/liveroom-react-todo-app/precache-manifest.1b96bbf1524f59c7c007e1262d4d39b7.js"
 );
 
 self.addEventListener('message', (event) => {
