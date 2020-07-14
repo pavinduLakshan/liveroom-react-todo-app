@@ -29,6 +29,10 @@ function App() {
 
   function setCompletedStatus(id, newStatus) {
     let selectedItem = toDos.find((todo) => todo.id === id);
+    if(!selectedItem){
+      alert("Item doesn't exist.")
+      return
+    }
     selectedItem.completed = newStatus;
 
     const otherItems = toDos.filter((todo) => todo.id !== id);
