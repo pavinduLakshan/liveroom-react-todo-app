@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ToDoItem = ({ id, name, date, time, isCompleted, onChangeStatus, onDelete }) => {
+const ToDoItem = ({ id, name, date, time, timeout, isFirstRender, isCompleted, onChangeStatus, onDelete }) => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -37,68 +37,68 @@ const ToDoItem = ({ id, name, date, time, isCompleted, onChangeStatus, onDelete 
   };
 
   return (
-    <Grow in={true}>
-<Paper
-      elevation={3}
-      className={classes.paper}
-      style={{
-        color: isCompleted ? 'white' : 'black',
-        marginBottom: '2%',
-        backgroundColor: isCompleted ? '#35C706' : 'white',
-      }}
-    >
-      {/* Todo item details */}
-      <div>
-        <Typography variant="h6" className={classes.title}>
-          {name}
-        </Typography>
-        <Typography variant="subtitle1">
-          {date} | {time}
-        </Typography>
-      </div>
-      <div style={{ flexGrow: 1 }}></div>
-      {/* Show corresponding icons based on completion status */}
-      {isCompleted ? (
-        <div>
-          <IconButton>
-            <UndoCompletedIcon style={{ color: 'red', fontSize: 30 }} onClick={() => onChangeStatus(id, false)} />
-          </IconButton>
-        </div>
-      ) : (
-        <IconButton>
-          <NotCompletedIcon style={{ fontSize: 30 }} onClick={() => onChangeStatus(id, true)} />
-        </IconButton>
-      )}
-      {/* Todo options menu */}
-
-      <IconButton
-        aria-controls="customized-menu"
-        aria-haspopup="true"
-        variant="contained"
-        color="primary"
-        onClick={handleClick}
+    <Grow in={true} style={{ transformOrigin: `0 0 0` }} {...{ timeout: isFirstRender ? timeout : 1000 }}>
+      <Paper
+        elevation={3}
+        className={classes.paper}
+        style={{
+          color: isCompleted ? 'white' : 'black',
+          marginBottom: '2%',
+          backgroundColor: isCompleted ? '#35C706' : 'white',
+        }}
       >
-        <MoreVerticalIcon style={{ color: isCompleted ? 'white' : 'black', fontSize: 25 }} />
-      </IconButton>
+        {/* Todo item details */}
+        <div>
+          <Typography variant="h6" className={classes.title}>
+            {name}
+          </Typography>
+          <Typography variant="subtitle1">
+            {date} | {time}
+          </Typography>
+        </div>
+        <div style={{ flexGrow: 1 }}></div>
+        {/* Show corresponding icons based on completion status */}
+        {isCompleted ? (
+          <div>
+            <IconButton>
+              <UndoCompletedIcon style={{ color: 'red', fontSize: 30 }} onClick={() => onChangeStatus(id, false)} />
+            </IconButton>
+          </div>
+        ) : (
+          <IconButton>
+            <NotCompletedIcon style={{ fontSize: 30 }} onClick={() => onChangeStatus(id, true)} />
+          </IconButton>
+        )}
+        {/* Todo options menu */}
 
-      <Paper className={classes.root}>
-        <Menu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
-          <MenuList id="todo-options">
-            <MenuItem
-              onClick={() => {
-                onDelete(id);
-                handleClose();
-              }}
-            >
-              <ListItemIcon>
-                <DeleteIcon fontSize="small" />
-              </ListItemIcon>
-              <Typography variant="inherit">Delete</Typography>
-            </MenuItem>
-          </MenuList>
-        </Menu>
+        <IconButton
+          aria-controls="customized-menu"
+          aria-haspopup="true"
+          variant="contained"
+          color="primary"
+          onClick={handleClick}
+        >
+          <MoreVerticalIcon style={{ color: isCompleted ? 'white' : 'black', fontSize: 25 }} />
+        </IconButton>
+
+        <Paper className={classes.root}>
+          <Menu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
+            <MenuList id="todo-options">
+              <MenuItem
+                onClick={() => {
+                  onDelete(id);
+                  handleClose();
+                }}
+              >
+                <ListItemIcon>
+                  <DeleteIcon fontSize="small" />
+                </ListItemIcon>
+                <Typography variant="inherit">Delete</Typography>
+              </MenuItem>
+            </MenuList>
+          </Menu>
+        </Paper>
       </Paper>
-    </Paper>
     </Grow>
   );
 };

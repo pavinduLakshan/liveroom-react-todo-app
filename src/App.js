@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // Material UI component imports
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -28,8 +28,48 @@ const themeLight = createMuiTheme({
 
 function App() {
   const classes = useStyles();
+  const [isFirstRender, setIsFirstRender] = useState(true);
+  const [toDos, setToDos] = useState([
+    {
+      id: Math.random(),
+      name: 'Go shopping',
+      date: '05-11-2020',
+      time: '11:00 AM',
+      completed: false,
+    },
+    {
+      id: Math.random(),
+      name: 'Bathing the dog',
+      date: '01-04-2020',
+      time: '02:25 PM',
+      completed: false,
+    },
+    {
+      id: Math.random(),
+      name: 'Practice Kungfu',
+      date: '07-09-2020',
+      time: '10:45 AM',
+      completed: true,
+    },
+    {
+      id: Math.random(),
+      name: 'Drive Aston Martin',
+      date: '15-10-2020',
+      time: '12:00 PM',
+      completed: true,
+    },
+    {
+      id: Math.random(),
+      name: 'Sleep',
+      date: '05-11-2020',
+      time: '1:20 AM',
+      completed: false,
+    },
+  ]);
 
-  const [toDos, setToDos] = useState([]);
+  useEffect(() => {
+    setIsFirstRender(false);
+  });
 
   function addToDo(todo) {
     console.log(todo);
@@ -77,9 +117,11 @@ function App() {
               </Typography>
               {toDos
                 .filter((item) => !item.completed)
-                .map((item) => (
+                .map((item, index) => (
                   <ToDoItem
                     id={item.id}
+                    isFirstRender={isFirstRender}
+                    timeout={1000 * (index + 1)}
                     name={item.name}
                     date={item.date}
                     time={item.time}
@@ -96,11 +138,13 @@ function App() {
               </Typography>
               {toDos
                 .filter((item) => item.completed)
-                .map((item) => (
+                .map((item, index) => (
                   <ToDoItem
                     id={item.id}
+                    isFirstRender={isFirstRender}
                     name={item.name}
                     date={item.date}
+                    timeout={900 * (index + 1)}
                     time={item.time}
                     onChangeStatus={setCompletedStatus}
                     onDelete={deleteToDo}
