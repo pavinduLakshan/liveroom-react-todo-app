@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 // Material UI component imports
-import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Grid from "@material-ui/core/Grid";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Grid from '@material-ui/core/Grid';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 
 // Other imports
-import "./App.css";
-import ToDoItem from "./components/ToDoItem";
-import AddTaskForm from "./components/AddTaskForm";
+import './App.css';
+import ToDoItem from './components/ToDoItem';
+import AddTaskForm from './components/AddTaskForm';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -20,40 +20,24 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const classes = useStyles();
 
-  const [toDo, setToDo] = useState([]);
-  const [done, setDone] = useState([]);
+  const [toDos, setToDos] = useState([]);
 
   function addToDo(todo) {
     console.log(todo);
-    setToDo([...toDo, todo]);
+    setToDos([...toDos, todo]);
   }
 
-  function markAsCompleted(id){
-    let comItem = toDo.find(t => t.id === id)
-    comItem.completed = true
-    setDone([...done,comItem])
-    const newToDo = toDo.filter(t => t.id !== id)
-    setToDo(newToDo)
+  function setCompletedStatus(id, newStatus) {
+    let selectedItem = toDos.find((todo) => todo.id === id);
+    selectedItem.completed = newStatus;
+
+    const otherItems = toDos.filter((todo) => todo.id !== id);
+    setToDos([...otherItems, selectedItem]);
   }
 
-  function markAsNotCompleted(id){
-    let comItem = done.find(t => t.id === id)
-    comItem.completed = false
-
-    setToDo([...toDo,comItem])
-    const newDone = done.filter(t => t.id !== id)
-    setDone(newDone)
-  }
-
-  function deleteToDo(id,completed){
-    if(completed){
-      let newList = done.filter(t => t.id !== id)
-      setDone(newList)
-    }
-    else{
-      let newList = toDo.filter(t => t.id !== id)
-      setToDo(newList)
-    }
+  function deleteToDo(id) {
+    let newList = toDos.filter((todo) => todo.id !== id);
+    setToDos(newList);
   }
 
   return (
@@ -67,56 +51,50 @@ function App() {
             </Typography>
           </Toolbar>
         </AppBar>
-
-        
-          <AddTaskForm onSubmit={addToDo} />
-        
-
+        <AddTaskForm onSubmit={addToDo} />
         {/* Main Container */}
         <Grid container spacing={5} className="main_container">
           {/* To do work */}
           <Grid item xs={12} sm={12} md={6} lg={6}>
-            <Typography
-              variant="h5"
-              component="h5"
-              style={{ textAlign: "left" }}
-            >
+            <Typography variant="h5" component="h5" style={{ textAlign: 'left' }}>
               To do
             </Typography>
-            {toDo.length > 0 ? toDo.map((item) => (
-              <ToDoItem
-              id={item.id}
-                name={item.name}
-                date={item.date}
-                time={item.time}
-                onComplete={markAsCompleted}
-                onDelete={deleteToDo}
-                onReverse={markAsNotCompleted}
-                isCompleted={item.completed}
-              />
-            )) : <Typography variant="subtitle1" style={{padding: "2%",color: "grey"}}>No tasks yet</Typography>}
+            {toDos.map((item) => {
+              if (!item.completed) {
+                return (
+                  <ToDoItem
+                    id={item.id}
+                    name={item.name}
+                    date={item.date}
+                    time={item.time}
+                    onChangeStatus={setCompletedStatus}
+                    onDelete={deleteToDo}
+                    isCompleted={item.completed}
+                  />
+                );
+              }
+            })}
           </Grid>
           {/* Completed tasks */}
           <Grid item xs={12} sm={12} md={6} lg={6}>
-            <Typography
-              variant="h5"
-              component="h5"
-              style={{ textAlign: "left" }}
-            >
+            <Typography variant="h5" component="h5" style={{ textAlign: 'left' }}>
               Done
             </Typography>
-            {done.length > 0 ? done.map(item => <ToDoItem
-                          id={item.id}
-              name={item.name}
-              date={item.date}
-              time={item.time}
-              onDelete={deleteToDo}
-              isCompleted={item.completed}
-              onReverse={markAsNotCompleted}
-            /> ) : 
-            
-<Typography variant="subtitle1" style={{padding: "2%",color: "grey"}}>No completed tasks yet</Typography>
-            }
+            {toDos.map((item) => {
+              if (item.completed) {
+                return (
+                  <ToDoItem
+                    id={item.id}
+                    name={item.name}
+                    date={item.date}
+                    time={item.time}
+                    onChangeStatus={setCompletedStatus}
+                    onDelete={deleteToDo}
+                    isCompleted={item.completed}
+                  />
+                );
+              }
+            })}
           </Grid>
         </Grid>
       </div>
