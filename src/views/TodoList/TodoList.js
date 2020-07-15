@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import ToDoItem from '../components/ToDoItem';
-import AddTaskForm from '../components/AddTaskForm';
+import ToDoItem from '../../components/ToDoItem';
+import AddTaskForm from '../../components/AddTaskForm';
 // Material UI component imports
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';

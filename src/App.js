@@ -3,7 +3,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 // Other imports
 import { HashRouter, Route } from 'react-router-dom';
-import ToDoList from './views/TodoList';
+import ToDoList from './views/TodoList/TodoList';
 import Pagination from './views/Pagination/Pagination';
 import './App.css';
 
