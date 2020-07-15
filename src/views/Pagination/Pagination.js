@@ -6,6 +6,9 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
+
 import './pagination.css';
 
 const useStyles = makeStyles((theme) => ({
@@ -22,6 +25,11 @@ const Pagination = () => {
   const [previousTokens, setPreviousTokens] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [isNextBtnDisabled, setNextBtnDisabled] = useState(false);
+  const [nItems,setNItems] = useState(3)
+
+  function handleNItems(e){
+    setNItems(e.target.value)
+  }
 
   useEffect(() => {
     fetch('https://af5xufo4j6.execute-api.us-east-1.amazonaws.com/test/all', {
@@ -71,6 +79,16 @@ const Pagination = () => {
         <Grid item xs={12} sm={12} md={8} lg={8} style={{ marginTop: '3%' }}>
           <div id="btn_container">
             <div style={{ flexGrow: 1 }} />
+            <Select
+          value={nItems}
+          id="n_items_selector"
+         disableUnderline
+          onChange={handleNItems}
+        >
+          <MenuItem value={3}>3</MenuItem>
+          <MenuItem value={5}>5</MenuItem>
+          <MenuItem value={10}>10</MenuItem>
+        </Select>
             <Button variant="contained" onClick={prev} color="primary" disabled={currentPage === 1}>
               prev
             </Button>
