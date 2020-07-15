@@ -30,12 +30,11 @@ const Pagination = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data.Items.length === 0) {
+        if (!data.LastEvaluatedKey) {
           setNextBtnDisabled(true);
-        } else {
-          setNextNextToken(data.LastEvaluatedKey);
-          setList(data.Items);
         }
+        setNextNextToken(data.LastEvaluatedKey);
+        setList(data.Items);
       })
       .catch((e) => console.log(e));
   }, [nextToken]);
