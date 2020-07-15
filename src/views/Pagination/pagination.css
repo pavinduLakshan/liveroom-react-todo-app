@@ -5,8 +5,13 @@
 }
 
 #current_page {
-  margin-left: 2%;
   margin-right: 2%;
 }
 
+.pagination_btn:hover {
+  background-color: inherit !important;
+}
 
+.pagination_btn {
+  color: black;
+}

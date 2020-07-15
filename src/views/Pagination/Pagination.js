@@ -3,6 +3,9 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import ToDoItem from '../../components/ToDoItem';
 import AppBar from '@material-ui/core/AppBar';
+import IconButton from '@material-ui/core/IconButton';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForwardIos';
+import ArrowBackIcon from '@material-ui/icons/ArrowBackIos';
 import Toolbar from '@material-ui/core/Toolbar';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -25,10 +28,10 @@ const Pagination = () => {
   const [previousTokens, setPreviousTokens] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [isNextBtnDisabled, setNextBtnDisabled] = useState(false);
-  const [nItems,setNItems] = useState(3)
+  const [nItems, setNItems] = useState(3);
 
-  function handleNItems(e){
-    setNItems(e.target.value)
+  function handleNItems(e) {
+    setNItems(e.target.value);
   }
 
   useEffect(() => {
@@ -76,26 +79,35 @@ const Pagination = () => {
       </AppBar>
       <Grid container spacing={0} className="main_container">
         <Grid item xs={12} sm={12} md={2} lg={2}></Grid>
-        <Grid item xs={12} sm={12} md={8} lg={8} style={{ marginTop: '3%' }}>
+        <Grid item xs={12} sm={12} md={8} lg={8} style={{ marginTop: '1.3%' }}>
           <div id="btn_container">
+            <p style={{ marginRight: '2%' }}>Rows per page</p>
+            <Select value={nItems} disableUnderline onChange={handleNItems}>
+              <MenuItem value={3}>3</MenuItem>
+              <MenuItem value={5}>5</MenuItem>
+              <MenuItem value={10}>10</MenuItem>
+            </Select>
             <div style={{ flexGrow: 1 }} />
-            <Select
-          value={nItems}
-          id="n_items_selector"
-         disableUnderline
-          onChange={handleNItems}
-        >
-          <MenuItem value={3}>3</MenuItem>
-          <MenuItem value={5}>5</MenuItem>
-          <MenuItem value={10}>10</MenuItem>
-        </Select>
-            <Button variant="contained" onClick={prev} color="primary" disabled={currentPage === 1}>
-              prev
-            </Button>
+            <IconButton
+              onClick={prev}
+              className="pagination_btn"
+              disableRipple
+              disableFocusRipple
+              disabled={currentPage === 1}
+            >
+              <ArrowBackIcon />
+            </IconButton>
             <p id="current_page">current page: {currentPage}</p>
-            <Button variant="contained" onClick={next} color="primary" disabled={isNextBtnDisabled}>
-              next
-            </Button>
+            <IconButton
+              onClick={next}
+              className="pagination_btn"
+              disableRipple
+              disableFocusRipple
+              disabled={isNextBtnDisabled}
+              style={{ padding: 0 }}
+            >
+              <ArrowForwardIcon />
+            </IconButton>
           </div>
           {list.map((item, index) => {
             return <ToDoItem id={Math.random()} timeout={250 * (index + 1)} name={item.PK} date={item.SK} />;
