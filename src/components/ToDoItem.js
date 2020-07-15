@@ -41,12 +41,8 @@ const ToDoItem = ({ name, date, time, timeout, isFirstRender, isCompleted }) => 
       >
         {/* Todo item details */}
         <div>
-          <Typography variant="h6" >
-            {name}
-          </Typography>
-          <Typography variant="subtitle1">
-            {date}
-          </Typography>
+          <Typography variant="h6">{name}</Typography>
+          <Typography variant="subtitle1">{date}</Typography>
         </div>
         <div style={{ flexGrow: 1 }}></div>
         <img src={`https://avatars.dicebear.com/api/human/${name}.svg`} height="50" width="50" />
