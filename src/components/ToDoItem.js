@@ -20,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'left',
     color: theme.palette.text.secondary,
     display: 'flex',
-    height: '15vh',
     justifyContent: 'center',
     flexDirection: 'row',
   },
@@ -42,15 +41,15 @@ const ToDoItem = ({ name, date, time, timeout, isFirstRender, isCompleted }) => 
       >
         {/* Todo item details */}
         <div>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h6" >
             {name}
           </Typography>
-          <Typography variant="subtitle1" className={classes.title}>
+          <Typography variant="subtitle1">
             {date}
           </Typography>
         </div>
         <div style={{ flexGrow: 1 }}></div>
-        <img src={`https://avatars.dicebear.com/api/human/${name}.svg`} height="70" width="70" />
+        <img src={`https://avatars.dicebear.com/api/human/${name}.svg`} height="50" width="50" />
       </Paper>
     </Grow>
   );
